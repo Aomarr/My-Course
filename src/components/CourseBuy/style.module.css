@@ -1,0 +1,86 @@
+
+
+.buyInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    box-shadow: 0px 6px 20px 0px #0000000D;
+    width: 100%;
+    max-width: 386px;
+    min-width: 300px;
+    height: 100%;
+    
+}
+
+.buyInfo h5 {
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: bold;
+    color: black;
+}
+
+.videoPropsList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.videoProps {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+.videoPropsIcon {
+    font-size: 22px;
+    color: #1B1B1B99;
+    display: flex;
+}
+.videoPropsText {
+    color: #1B1B1BE5;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.buttonsBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
+.buyButton {
+    background-color: #3DCBB1;
+    color: white;
+    border-radius: 18px;
+    padding: 12px;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+    border: 1px solid #3DCBB1;
+}
+.removeButton {
+    background-color: #dd2e2e;
+    color: white;
+    border-radius: 18px;
+    padding: 12px;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+    border: 1px solid #dd2e2e;
+    display: none;
+}
+.wishButton {
+    background-color: white;
+    color: #1B1B1B99;
+    border-radius: 18px;
+    padding: 12px;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+    border: 1px solid #1B1B1B99;
+    align-content: center;
+}
+.wishButton svg {
+    font-size: 22px;
+}

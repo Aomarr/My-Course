@@ -1,0 +1,27 @@
+* , *::after, *::before {
+    box-sizing: border-box;
+}
+.content {
+    width: 100%;
+    max-width: 793px;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+}
+.video {
+    width: 100%;
+}
+.controlsContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+.controlsContainer:hover, .controlsContainer.paused {
+    opacity: 1;
+}

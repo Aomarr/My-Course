@@ -1,0 +1,138 @@
+.banner {
+    background-image: url(/src/assets/images/signup-banner.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 400px;
+    color: white;
+}
+
+.info {
+    color: #1B1B1B99;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.inputfield {
+    background-color: #F9F9F9E5;
+    border: none !important;
+    width: 100% !important;
+    padding: 10px 12px !;
+
+}
+
+.inputicon {
+    background-color: #F9F9F9E5;
+    border: none;
+    color: #1B1B1B99;
+}
+
+
+.submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #3DCBB1;
+    color: white;
+    border-radius: 14px;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: bold;
+}
+.submit:hover {
+    color: #3DCBB1;
+}
+.submit:active {
+    color: #3DCBB1 !important;
+    border-color: #3DCBB1 !important;
+}
+
+.inputbox {
+    background-color: #F9F9F9E5;
+    flex-wrap: nowrap !important;
+}
+
+.social {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 700;
+    padding: 10px;
+    width: 100%;
+    border-radius: 14px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+.socialFacebook {
+    background-color: #4267B2;
+    color: white !important;
+}
+.socialFacebook:hover {
+    color: #4267B2;
+}
+.socialFacebook:active {
+    color: #4267B2 !important;
+    border-color: #4267B2 !important;
+}
+.socialApple {
+    background-color: #1B1B1B;
+    color: white !important;
+}
+.socialGoogle {
+    color: #1B1B1B;
+    border: 1px solid #1B1B1B1A;
+    background-color: white;
+}
+.data {
+    width: 100%;
+    max-width: 400px;
+}
+.socialLogo {
+    font-size: 21px;
+}
+.closer {
+    display: flex;
+    justify-content: end;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.section {
+    width: 100%;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+.bannerIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 2.5px;
+    background-color: white;
+}
+.bannerIcon img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+.bannerText h5 {
+    color: white !important;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: bold;
+    margin: 0;
+}
+.bannerText span {
+    color: #F9F9F999 !important;
+    font-size: 14px;
+    line-height: 18px;
+}
+.changeBox {
+    color: #1B1B1B99;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+}

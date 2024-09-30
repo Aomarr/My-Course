@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+.heroSection {
+    display: flex;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.heroLabel {
+    background-image: url(/src/assets/images/mainhero.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 77px;
+    min-height: 333px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: white;
+}
+.heroLabelSec {
+    background-image: url(/src/assets/images/yellow-hero.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 77px;
+    min-height: 333px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: black
+}
+.heroLabel h1 {
+    max-width: 380px;
+}
+.heroLabelSec h1 {
+    max-width: 380px;
+}
+.explore {
+    color: #3DCBB1;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+}
+.explore:hover {
+    color: #3DCBB1;
+}
+.explore:active {
+    color: white !important;
+    background-color: #3DCBB1 !important;
+    border: 2px solid white !important;
+}
+.exploreSec {
+    color: black;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+}
+.exploreSec:hover {
+    color: black;
+}
+.exploreSec:active {
+    color: white !important;
+    background-color: black !important;
+    border: 2px solid white !important;
+}
+.heroBanner {
+    flex-grow: 1;
+    background-image: url(/src/assets/images/hero-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 25px;
+}
+.heroBannerSec {
+    flex-grow: 1;
+    background-image: url(/src/assets/images/yellow-banner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 25px;
+}
+.image {
+    width: 64px;
+    height: 64px;
+    border: 4px solid white;
+    border-radius: 50px;
+}
+.image img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: fill;
+    border-radius: 50px;
+}
+.bannerText {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 570px;
+    color: white;
+}
+.bannerAuthor {
+    display: flex;
+    gap: 15px;
+}
+.trending {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.cardCont {
+width: calc((100% - 60)/4);
+}
+
+.sectionLabel {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-top: 40px;
+}
+
+.sectionInfo {
+    font-size: 16px;
+    line-height: 24px;
+    color: #1B1B1B99;
+}
+
+@media screen and (max-width: 1250px) {
+    .cardCont {
+        width: calc((100% - 40)/3);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cardCont {
+        width: calc((100% - 20)/2);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .cardCont {
+        width: 100%
+    }
+}

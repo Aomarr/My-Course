@@ -1,0 +1,44 @@
+.switch {
+    background-color: white !important;
+    border: none !important;
+    color: #3DCBB1 !important;
+    font-size: 12px !important;
+    line-height: 16px !important;
+    font-weight: bold !important;
+    padding: 0 !important;
+}
+.closing {
+    width: 9px !important;
+    height: 9px !important;
+}
+.modal {
+    width: 100% !important;
+    max-width: 800px !important;
+}
+
+.loginBtn {
+    padding: 8px 16px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: bold;
+    margin-right: 20px;
+    margin-left: 20px;
+    width: max-content;
+}
+.signupBtn {
+    padding: 8px 16px;
+    background-color: #3DCBB1;
+    color: white;
+    border: 1px solid #3DCBB1;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: bold;
+    min-width: 83px;
+    width: max-content;
+}
+.signupBtn:active {
+    border-color: #3DCBB1 !important;
+}

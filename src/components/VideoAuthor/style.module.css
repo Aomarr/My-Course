@@ -1,0 +1,29 @@
+.imgBox {
+    display: flex;
+}
+.creatorName {
+    color: #3DCBB1;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 1px;
+}
+.creatorInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.creatorType {
+    color: #1B1B1B99;
+    font-size: 10px;
+    line-height: 15px;
+}
+.authorBoxIcon {
+    color: #3DCBB1;
+    font-size: 20px;
+}
+.authorBoxText {
+    color: #1B1B1B99;
+    font-size: 14px;
+    line-height: 18px;
+}

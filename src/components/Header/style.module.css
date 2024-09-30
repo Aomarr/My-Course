@@ -1,0 +1,92 @@
+.searchField , .searchButton {
+    background-color: #F9F9F9;
+}
+.searchField {
+    width: auto;
+    flex-grow: 1;
+    z-index: 1;
+}
+.compound {
+    max-width: 815px;
+    width: 100%;
+}
+.compound form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+}
+.part3 {
+    display: flex;
+    align-items: center;
+    color: black;
+}
+.part3 a {
+    color: black;
+    text-decoration: none;
+}
+
+.cart {
+    display: flex;
+}
+
+.userIcon{
+    width: 100%;
+    height: 100%;
+    max-width: 36px;
+    max-height: 36px;
+    padding: 0;
+}
+.userIcon button {
+    padding: 0;
+}
+.userIcon img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}   
+
+.listUserName {
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+    margin: 0;
+}
+.listUserEmail {
+    font-size: 14px;
+    line-height: 18px;
+    color: #1B1B1B99;
+    margin: 0;
+}
+
+.dropDownMenuItems a {
+    font-size: 14px ;
+    line-height: 18px;
+    color: black;
+}
+
+.logOut {
+    color: #FE416D !important;
+}
+@media screen and (max-width: 768px) {
+    .compound {
+        flex-direction: column;
+    }
+    .part3 {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+
+header {
+    box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 991px) {
+    .compound {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
