@@ -22,7 +22,7 @@ export default function SearchResults() {
                 query: `${param}`,
             },
             headers: {
-                "x-rapidapi-key": "439c35ee5fmsh73d932b78329c55p188d2ejsn04ce436b4df7",
+                "x-rapidapi-key": "7f1677d5d0msh3f98780f4586956p1ba78djsnf49bf09d568e",
                 "x-rapidapi-host": "udemy-paid-courses-for-free-api.p.rapidapi.com",
             },
         }).then((res) => setResults(res.data.courses))
@@ -79,7 +79,7 @@ export default function SearchResults() {
                                         id="rating1"
                                     ></input>
                                     <label className="form-check-label" htmlFor="rating1">
-                                        <span>
+                                        <span className={`${style.stars}`}>
                                             <FaStar />
                                             <FaStar />
                                             <FaStar />
@@ -98,7 +98,7 @@ export default function SearchResults() {
                                         
                                     ></input>
                                     <label className="form-check-label" htmlFor="rating2">
-                                        <span>
+                                        <span className={`${style.stars}`}>
                                             <FaStar />
                                             <FaStar />
                                             <FaStar />
@@ -116,7 +116,7 @@ export default function SearchResults() {
                                         
                                     ></input>
                                     <label className="form-check-label" htmlFor="rating3">
-                                        <span>
+                                        <span className={`${style.stars}`}>
                                             <FaStar />
                                             <FaStar />
                                             <FaStar />
