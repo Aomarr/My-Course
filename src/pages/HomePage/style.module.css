@@ -135,6 +135,16 @@ width: calc((100% - 60)/4);
     color: #1B1B1B99;
 }
 
+.placeHolder {
+    width: 100%;
+    gap: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.placeHolder > div {
+    width: 100%;
+}
+
 @media screen and (max-width: 1250px) {
     .cardCont {
         width: calc((100% - 40)/3);

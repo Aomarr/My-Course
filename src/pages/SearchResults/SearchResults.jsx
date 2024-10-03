@@ -10,29 +10,57 @@ import Error from "../../components/Error/Error";
 
 export default function SearchResults() {
     const { param } = useParams();
-    const [error, setError] = useState(false)
+    const [loader, setLoader] = useState(true);
+    const [error, setError] = useState(false);
     const [results, setResults] = useState([]);
+    const placeHolder = (
+        <>
+            <div className="card" aria-hidden="true">
+                <img src="..." className="card-img-top" alt="..."></img>
+                <div className="card-body">
+                    <h5 className="card-title placeholder-glow">
+                        <span className="placeholder col-6"></span>
+                    </h5>
+                    <p className="card-text placeholder-glow">
+                        <span className="placeholder col-7"></span>
+                        <span className="placeholder col-4"></span>
+                        <span className="placeholder col-4"></span>
+                        <span className="placeholder col-6"></span>
+                        <span className="placeholder col-8"></span>
+                    </p>
+                    <a
+                        className="btn btn-primary disabled placeholder col-6"
+                        aria-disabled="true"
+                    ></a>
+                </div>
+            </div>
+        </>
+    );
     useEffect(() => {
         axios({
             method: "GET",
             url: "https://udemy-paid-courses-for-free-api.p.rapidapi.com/rapidapi/courses/search",
             params: {
                 page: "1",
-                
+
                 query: `${param}`,
             },
             headers: {
                 "x-rapidapi-key": "7f1677d5d0msh3f98780f4586956p1ba78djsnf49bf09d568e",
                 "x-rapidapi-host": "udemy-paid-courses-for-free-api.p.rapidapi.com",
             },
-        }).then((res) => setResults(res.data.courses))
-        .catch(() => setError(true));
+        })
+            .then((res) => {
+                setResults(res.data.courses);
+                setLoader(false);
+            })
+            .catch(() => {
+                setError(true);
+                setLoader(false);
+            });
     }, [param]);
     const searchResults = results.map((element, index) => (
-        <Card
-            key={index}
-            element={element}
-        />
+        <Card key={index} element={element} />
     ));
 
     return (
@@ -57,7 +85,10 @@ export default function SearchResults() {
                     aria-labelledby="offcanvasScrollingLabel"
                 >
                     <div className="offcanvas-header">
-                        <h5 className="offcanvas-title fw-bold" id="offcanvasScrollingLabel">
+                        <h5
+                            className="offcanvas-title fw-bold"
+                            id="offcanvasScrollingLabel"
+                        >
                             Filter
                         </h5>
                         <button
@@ -95,7 +126,6 @@ export default function SearchResults() {
                                         type="radio"
                                         name="flexRadioDefault"
                                         id="rating2"
-                                        
                                     ></input>
                                     <label className="form-check-label" htmlFor="rating2">
                                         <span className={`${style.stars}`}>
@@ -113,7 +143,6 @@ export default function SearchResults() {
                                         type="radio"
                                         name="flexRadioDefault"
                                         id="rating3"
-                                        
                                     ></input>
                                     <label className="form-check-label" htmlFor="rating3">
                                         <span className={`${style.stars}`}>
@@ -144,7 +173,6 @@ export default function SearchResults() {
                                         type="checkbox"
                                         value="5"
                                         id="duration2"
-                                        
                                     ></input>
                                     <label className="form-check-label" htmlFor="duration2">
                                         3-5 Hours
@@ -156,7 +184,6 @@ export default function SearchResults() {
                                         type="checkbox"
                                         value="6"
                                         id="duration3"
-                                        
                                     ></input>
                                     <label className="form-check-label" htmlFor="duration3">
                                         6-12 Hours
@@ -168,7 +195,6 @@ export default function SearchResults() {
                                         type="checkbox"
                                         value="12"
                                         id="duration4"
-                                        
                                     ></input>
                                     <label className="form-check-label" htmlFor="duration4">
                                         12+ Hours
@@ -181,8 +207,20 @@ export default function SearchResults() {
             </div>
             <div>
                 <div className={`${style.results} row`}>
+                    {loader && (
+                        <div className={`${style.placeHolder}`}>
+                            {placeHolder}
+                            {placeHolder}
+                            {placeHolder}
+                            {placeHolder}
+                        </div>
+                    )}
                     {searchResults}
-                    {error && <div className="text-center z-3"><Error/></div>}    
+                    {error && (
+                        <div className="text-center z-3">
+                            <Error />
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

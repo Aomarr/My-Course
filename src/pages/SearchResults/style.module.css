@@ -13,3 +13,12 @@
 .stars {
     color: rgb(255, 209, 48);
 }
+.placeHolder {
+    width: 100%;
+    gap: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.placeHolder > div {
+    width: 100%;
+}
