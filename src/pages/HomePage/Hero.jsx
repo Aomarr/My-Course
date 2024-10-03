@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './style.module.css'
 import { Link } from 'react-router-dom'
+import square from "/src/assets/images/Square.png"
 export default function Hero() {
   return (
     <>
@@ -18,7 +19,7 @@ export default function Hero() {
           <div className={`${style.bannerText}`}>
             <div className={`${style.bannerAuthor}`}>
               <div className={`${style.image}`}>
-                <img src='/src/assets/images/Square.png'></img>
+                <img src={square}></img>
               </div>
               <div>
                 <h4>Jessy Wong</h4>
@@ -44,7 +45,7 @@ export default function Hero() {
           <div className={`${style.bannerText}`}>
             <div className={`${style.bannerAuthor}`}>
               <div className={`${style.image}`}>
-                <img src='/src/assets/images/Square.png'></img>
+                <img src={square}></img>
               </div>
               <div>
                 <h4>Jane Kitani</h4>
