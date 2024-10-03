@@ -5,6 +5,7 @@ import style from './style.module.css';
 import { BiLogoFacebookSquare } from "react-icons/bi";
 import { FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import regIcon from "../../assets/images/reg-icon.png"
 
 
 
@@ -15,7 +16,7 @@ export default function Signup({ close, change }) {
             <div className={`d-flex flex-row flex-wrap justify-content-center ${style.section}`}>
                 <div className={`${style.banner} d-none d-lg-flex align-items-end`}>
                     <div className="d-flex align-items-center p-3 gap-2">
-                        <div className={`${style.bannerIcon}`}><img src="/src/assets/images/reg-icon.png"></img></div>
+                        <div className={`${style.bannerIcon}`}><img src={regIcon}></img></div>
                         <div className={`${style.bannerText}`}>
                             <h5>Joe Kitanoe</h5>
                             <span>Software Developer</span>

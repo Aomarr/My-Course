@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './style.module.css'
 import { Link } from 'react-router-dom'
-import square from "/src/assets/images/Square.png"
+import square from "../../assets/images/Square.png"
 export default function Hero() {
   return (
     <>

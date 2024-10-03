@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/authSlice";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux'
-
+import regIcon from "../../assets/images/reg-icon.png"
 
 export default function Login({ close, change, disp }) {
     const navigate = useNavigate()
@@ -52,7 +52,7 @@ export default function Login({ close, change, disp }) {
             <div className={`d-flex flex-row flex-wrap justify-content-center ${style.section}`}>
                 <div className={`${style.banner} d-none d-lg-flex`}>
                     <div className="d-flex align-items-center p-3 gap-2">
-                        <div className={`${style.bannerIcon}`}><img src="/src/assets/images/reg-icon.png"></img></div>
+                        <div className={`${style.bannerIcon}`}><img src={regIcon}></img></div>
                         <div className={`${style.bannerText}`}>
                             <h5>Joe Kitanoe</h5>
                             <span>Software Developer</span>
