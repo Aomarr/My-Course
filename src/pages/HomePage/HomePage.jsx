@@ -44,7 +44,7 @@ export default function HomePage() {
         page_size: "8",
       },
       headers: {
-        "x-rapidapi-key": "7f1677d5d0msh3f98780f4586956p1ba78djsnf49bf09d568e",
+        "x-rapidapi-key": "63f1b4a340mshe993d0c793367e7p1f3750jsnea446d46dfb7",
         "x-rapidapi-host": "udemy-paid-courses-for-free-api.p.rapidapi.com",
       },
     })

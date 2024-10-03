@@ -14,7 +14,7 @@
     color: rgb(255, 209, 48);
 }
 .placeHolder {
-    width: 100%;
+    width: 100%; 
     gap: 30px;
     display: flex;
     justify-content: space-between;
