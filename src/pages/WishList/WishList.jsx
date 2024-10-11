@@ -12,6 +12,8 @@ export default function WishList() {
             <Card
                 element={element}
                 key={index}
+                minus={true}
+                totPrice={setPrice}
             />
         )));
 

@@ -4,23 +4,15 @@ import style from './style.module.css'
 export default function Cart() {
     const [cart, setCart] = useState([])
     const [price, setPrice] = useState(0)
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || []
-    
-
-    const handleRemoveFromCart = (elementName)=> {
-        const exist = cartItems.find((item)=> item.name === elementName)
-        const place =cartItems.indexOf(exist)
-        const newed = cartItems.splice(place, 1)
-        setCart(newed)
-        localStorage.setItem('cart', JSON.stringify(cart));
-    }
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || []    
 
     useEffect(()=>{
       setCart(cartItems.map((element, index) => (
         <Card
           element={element}
           key={index}
-          minus={() => {handleRemoveFromCart}}
+          minus={true}
+          totPrice={setPrice}
         />
       )));
 
