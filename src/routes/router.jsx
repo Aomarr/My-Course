@@ -12,6 +12,7 @@ import WithAuth from "./WithAuth";
 import WithoutAuth from "./WithoutAuth";
 import Error from "../components/Error/Error";
 import Cart from "../pages/Cart/Cart";
+import WishList from "../pages/WishList/WishList";
 
 
 
@@ -52,7 +53,11 @@ const browseRouter = createBrowserRouter([
             {
                 path: '/cart',
                 element: <Cart />
-            }
+            },
+            {
+                path: '/wish-list',
+                element: <WishList />
+            },
         ]
     }
 ])

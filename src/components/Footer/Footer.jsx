@@ -15,7 +15,7 @@ export default function Footer() {
                     <h3>Join and get amazing discount</h3>
                     <p>With our responsive themes and mobile and desktop apps</p>
                 </div>
-                <div className='d-flex gap-3 align-items-center'>
+                <div className='d-flex gap-3 align-items-center flex-wrap'>
                     <div className={`input-group ${style.newsInput}`}>
                         <input type="email" className="form-control bg-white bg-opacity-25 border border-0" placeholder="Email Address" aria-label="Recipient's username" aria-describedby="button-addon2" required></input>
                         <button className="btn btn-outline-secondary text-white bg-white bg-opacity-25 border border-0" type="button" id="button-addon2"><IoMdSearch /></button>

@@ -5,35 +5,14 @@ import style from "./style.module.css";
 import UseAxios from "../../Hooks/UseAxios";
 import axios from "axios";
 import Error from "../../components/Error/Error";
+import Loader from "../../components/Loader/Loader";
 
 export default function HomePage() {
   const [error, setError] = useState(false);
   const [loader, setLoader] = useState(true);
   const [courses, setCourses] = useState([]);
-  const axiosInstance = UseAxios();
   const courseData = JSON.parse(localStorage.getItem("courseData")) || [];
-  const placeHolder = (<>
-    <div className="card" aria-hidden="true">
-      <img src="..." className="card-img-top" alt="..."></img>
-      <div className="card-body">
-        <h5 className="card-title placeholder-glow">
-          <span className="placeholder col-6"></span>
-        </h5>
-        <p className="card-text placeholder-glow">
-          <span className="placeholder col-7"></span>
-          <span className="placeholder col-4"></span>
-          <span className="placeholder col-4"></span>
-          <span className="placeholder col-6"></span>
-          <span className="placeholder col-8"></span>
-        </p>
-        <a
-          className="btn btn-primary disabled placeholder col-6"
-          aria-disabled="true"
-        ></a>
-      </div>
-    </div>
-    </>
-  );
+  const placeHolder = <Loader />
 
   useEffect(() => {
     axios({
@@ -41,10 +20,10 @@ export default function HomePage() {
       url: "https://udemy-paid-courses-for-free-api.p.rapidapi.com/rapidapi/courses/",
       params: {
         page: "1",
-        page_size: "8",
+        page_size: "12",
       },
       headers: {
-        "x-rapidapi-key": "63f1b4a340mshe993d0c793367e7p1f3750jsnea446d46dfb7",
+        "x-rapidapi-key": "6d3d2bea7dmshab594d8ac846be3p17f160jsnd5ec5353f4ed",
         "x-rapidapi-host": "udemy-paid-courses-for-free-api.p.rapidapi.com",
       },
     })
@@ -87,7 +66,7 @@ export default function HomePage() {
           <div className={`${style.trending}`}>
             {loader && <div className={`${style.placeHolder}`}>{placeHolder}{placeHolder}{placeHolder}{placeHolder}</div>}
             {list}
-            {/* {error ? <Error /> : <></>} */}
+            {error ? <Error /> : <></>}
           </div>
         </div>
       </div>

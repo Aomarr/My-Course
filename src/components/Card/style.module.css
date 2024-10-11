@@ -76,6 +76,19 @@
     line-height: 18px;
     font-weight: 400;
 }
+
+.delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+    font-size: 30px;
+    color: rgb(235, 95, 95);
+}
+.delete:hover {
+    color: rgb(207, 79, 79);
+}
+
 @media screen and (max-width: 1399px) {
     .box {
         width: calc((100% - 40px) / 3) !important;

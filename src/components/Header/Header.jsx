@@ -153,14 +153,14 @@ export default function Header() {
                             </a>
                           </li>
                           <li>
-                            <a className="dropdown-item" href="#">
+                            <Link className="dropdown-item" to={"/cart"}>
                               My Cart
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a className="dropdown-item" href="#">
+                            <Link className="dropdown-item" to={"/wish-list"}>
                               Wishlist
-                            </a>
+                            </Link>
                           </li>
                           <li><hr className="dropdown-divider"></hr></li>
                           <li>

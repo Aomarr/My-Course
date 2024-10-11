@@ -14,11 +14,30 @@
     color: rgb(255, 209, 48);
 }
 .placeHolder {
-    width: 100%; 
-    gap: 30px;
+    width: 100%;
+    gap: 20px;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .placeHolder > div {
-    width: 100%;
+    width: calc((100% - 60px) / 4);
+}
+
+
+@media screen and (max-width: 1250px) {
+    .placeHolder > div {
+        width: calc((100% - 40px)/3);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .placeHolder > div {
+        width: calc((100% - 20px)/2);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .placeHolder > div {
+        width: 100%;
+    }
 }

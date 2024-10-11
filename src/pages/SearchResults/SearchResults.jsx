@@ -7,35 +7,14 @@ import { FaRegStarHalfStroke } from "react-icons/fa6";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Error from "../../components/Error/Error";
+import Loader from "../../components/Loader/Loader";
 
 export default function SearchResults() {
     const { param } = useParams();
     const [loader, setLoader] = useState(true);
     const [error, setError] = useState(false);
     const [results, setResults] = useState([]);
-    const placeHolder = (
-        <>
-            <div className="card" aria-hidden="true">
-                <img src="..." className="card-img-top" alt="..."></img>
-                <div className="card-body">
-                    <h5 className="card-title placeholder-glow">
-                        <span className="placeholder col-6"></span>
-                    </h5>
-                    <p className="card-text placeholder-glow">
-                        <span className="placeholder col-7"></span>
-                        <span className="placeholder col-4"></span>
-                        <span className="placeholder col-4"></span>
-                        <span className="placeholder col-6"></span>
-                        <span className="placeholder col-8"></span>
-                    </p>
-                    <a
-                        className="btn btn-primary disabled placeholder col-6"
-                        aria-disabled="true"
-                    ></a>
-                </div>
-            </div>
-        </>
-    );
+    const placeHolder = <Loader />
     useEffect(() => {
         axios({
             method: "GET",

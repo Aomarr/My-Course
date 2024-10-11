@@ -10,22 +10,45 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function CourseBuy({ price, status, element, name }) {
-  const cart = JSON.parse(localStorage.getItem('cart')) || []
-  const [cartItems, setCartItems] = useState([])
-  const globalExist = cart.find((item)=> item.name === element.name)
+
+  const [cart, setCart] = useState([])
+  const [wish, setWish] = useState([])
+  const [ isCarted, setIsCarted ] = useState()
+  const [ isWished, setIsWished ] = useState()
+
   const user = useSelector(state => state.auth.value)
   const navigate = useNavigate()
   const addRef = useRef()
   const removeRef = useRef()
+  const addWishRef = useRef()
+  const removeWishRef = useRef()
 
   useEffect(()=> {
+    const cart = JSON.parse(localStorage.getItem('cart')) || []
+    const wish = JSON.parse(localStorage.getItem('wish')) || []
+    setCart(cart)
+    setWish(wish)
+    const globalExist = cart.find((item)=> item.name === element.name)
+    const wishExist = wish.find((item)=> item.name === element.name)
+    setIsCarted(globalExist)
+    setIsWished(wishExist)
     if (globalExist == undefined) {
       addRef.current.style.display = "inline-block";
       removeRef.current.style.display = "none";
+
     }
-    if (globalExist != undefined) {
+    else if (globalExist != undefined) {
       addRef.current.style.display = "none";
       removeRef.current.style.display = "inline-block";
+    }
+
+    if (wishExist == undefined) {
+      addWishRef.current.style.display = "inline-block";
+      removeWishRef.current.style.display = "none";
+    }
+    else if (wishExist != undefined) {
+      addWishRef.current.style.display = "none";
+      removeWishRef.current.style.display = "inline-block";
     }
   },[])
 
@@ -33,51 +56,68 @@ export default function CourseBuy({ price, status, element, name }) {
     const removeBtn = removeRef.current
 
     const exist = cart.find((item)=> item.name === element.name)
-    console.log(user)
 
     if (user == null) {
       navigate('/login')
     }
     else if (user !== null) {
-      console.log("hhh")
       cart.push(element)
       localStorage.setItem('cart', JSON.stringify(cart));
+      setIsCarted(element)
       e.target.style.display = "none"
       removeBtn.style.display = "inline-block"
     }
 
-    // if ((user !== undefined) && (exist == undefined)) {
-    //   cart.push(element)
-    //   localStorage.setItem('cart', JSON.stringify(cart));
-    //   e.target.style.display = "none"
-    //   removeBtn.style.display = "inline-block"
-    // }
-    // else if ((user !== undefined) && (exist !== undefined)) {
-    //   e.target.style.display = 'none'
-    // }
-    // else if (user == undefined){
-    //   navigate('/login')
-    // }
   }
   
   const handleRemove = (e) => {
     const addBtn = addRef.current
     const exist = cart.find((item)=> item.name == element.name)
-    if ((globalExist !== undefined)) {
+    if ((isCarted !== undefined)) {
       const place =cart.indexOf(exist)
       cart.splice(place, 1)
       localStorage.setItem('cart', JSON.stringify(cart));
+      setIsCarted(undefined)
       e.target.style.display = "none"
       addBtn.style.display = "inline-block"
     }
   }
+
+  const AddToWishList = (e) => {
+    const removeRefBtn = removeWishRef.current
+    if (user == null) {
+      navigate('/login')
+    }
+    else if (user !== null) {
+      wish.push(element)
+      localStorage.setItem('wish', JSON.stringify(wish));
+      setIsWished(element)
+      e.target.style.display = "none"
+      removeRefBtn.style.display = "inline-block"
+    }
+  }
+
+  const RemoveWishList = (e) => {
+    const addRefBtn = addWishRef.current
+    const exist = wish.find((item)=> item.name == element.name)
+    if ((isWished !== undefined)) {
+      const place = wish.indexOf(exist)
+      wish.splice(place, 1)
+      localStorage.setItem('wish', JSON.stringify(wish));
+      setIsWished(undefined)
+      e.target.style.display = "none"
+      addRefBtn.style.display = "inline-block"
+    }
+  }
+
   return (
     <div className={`${style.buyInfo}`}>
         <h5>$ {price}</h5>
         <div className={`${style.buttonsBox}`}>
             <button className={`${style.buyButton} btn`} onClick={handleBuy} ref={addRef}>Add to Cart</button>
             <button className={`${style.removeButton} btn bg-danger`} onClick={handleRemove} ref={removeRef}>Remove from Cart</button>
-            <button className={`${style.wishButton} btn`}><MdFavoriteBorder /> Whishlist</button>
+            <button className={`${style.wishButton} btn`} onClick={AddToWishList} ref={addWishRef}><MdFavoriteBorder /> Whishlist</button>
+            <button className={`${style.removeButton} btn`} onClick={RemoveWishList} ref={removeWishRef}><MdFavoriteBorder /> Remove from Wishlist</button>
         </div>
         <div className={`${style.videoPropsList}`}>
             <div className={`${style.videoProps}`}><span className={`${style.videoPropsIcon}`}><MdListAlt /></span><span className={`${style.videoPropsText}`}>22 Section</span></div>

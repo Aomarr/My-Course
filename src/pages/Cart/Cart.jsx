@@ -6,11 +6,21 @@ export default function Cart() {
     const [price, setPrice] = useState(0)
     const cartItems = JSON.parse(localStorage.getItem('cart')) || []
     
+
+    const handleRemoveFromCart = (elementName)=> {
+        const exist = cartItems.find((item)=> item.name === elementName)
+        const place =cartItems.indexOf(exist)
+        const newed = cartItems.splice(place, 1)
+        setCart(newed)
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
     useEffect(()=>{
       setCart(cartItems.map((element, index) => (
         <Card
-          element = {element}
+          element={element}
           key={index}
+          minus={() => {handleRemoveFromCart}}
         />
       )));
 
@@ -23,6 +33,7 @@ export default function Cart() {
       setCart([])
       setPrice(0)
     }
+
   return (
     <>
     <div className='container'>
