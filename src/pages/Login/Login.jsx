@@ -72,7 +72,7 @@ export default function Login({ close, change, disp }) {
                         <form className={`d-flex flex-column align-items-center ${style.formbox}`} onSubmit={handleSubmit} data-target="#exampleModalToggle">
                             <div className={` input-group mb-3 d-flex ${style.inputbox}`}>
                                 <input
-                                    type="email"
+                                    type="text"
                                     className={` form-control ${style.inputfield}`}
                                     placeholder="Email Adress"
                                     aria-label="Email Adress"
