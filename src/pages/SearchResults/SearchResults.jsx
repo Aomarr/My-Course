@@ -25,7 +25,7 @@ export default function SearchResults() {
                 query: `${param}`,
             },
             headers: {
-                "x-rapidapi-key": "63f1b4a340mshe993d0c793367e7p1f3750jsnea446d46dfb7",
+                "x-rapidapi-key": "6d3d2bea7dmshab594d8ac846be3p17f160jsnd5ec5353f4ed",
                 "x-rapidapi-host": "udemy-paid-courses-for-free-api.p.rapidapi.com",
             },
         })
