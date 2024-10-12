@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { MdOutlineMail } from "react-icons/md";
 import { MdLock } from "react-icons/md";
 import style from "./style.module.css";
@@ -20,6 +20,7 @@ export default function Login({ close, change, disp }) {
     const dispatch = useDispatch()
     const token = JSON.parse(sessionStorage?.getItem('token'))
     const user = useSelector(state => state.value)
+    const [ failed, SetFailed ] = useState(false)
 
 
     const handleSubmit = async (e) => {
@@ -41,10 +42,9 @@ export default function Login({ close, change, disp }) {
             sessionStorage.setItem('token', JSON.stringify(res.data.accessToken));
             dispatch(setUser(res.data));
         })
+        .catch(()=> {SetFailed(true)})
         document.querySelector('.modal-backdrop').remove()
         document.querySelector('body').classList.remove('modal-open')
-        // const myModal = bootstrap.Modal.getInstance(document.getElementById("exampleModalToggle"))
-        // myModal.hide()
     }
 
     return (
@@ -72,7 +72,7 @@ export default function Login({ close, change, disp }) {
                         <form className={`d-flex flex-column align-items-center ${style.formbox}`} onSubmit={handleSubmit} data-target="#exampleModalToggle">
                             <div className={` input-group mb-3 d-flex ${style.inputbox}`}>
                                 <input
-                                    type="text"
+                                    type="email"
                                     className={` form-control ${style.inputfield}`}
                                     placeholder="Email Adress"
                                     aria-label="Email Adress"
@@ -107,6 +107,7 @@ export default function Login({ close, change, disp }) {
                                     <MdLock />
                                 </span>
                             </div>
+                            {failed && <p className="text-danger fw-bold">Wrong username or password</p>}
                             <button className={`${style.submit} btn`} type="submit">
                                 Login
                             </button>
@@ -142,6 +143,7 @@ export default function Login({ close, change, disp }) {
                             </a>
                         </div>
                         <p className={`${style.changeBox}`}>Need an Account? {change}</p>
+                        <p className={`${style.changeBox}`}>example: jamesd | jamesdpass</p>
                     </div>
                 </div>
             </div>
